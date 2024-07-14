@@ -1,12 +1,12 @@
-<script setup></script>
-
 <template>
 	<div class="d-flex mb-2 gap-1">
 		<input
+			@keyup.enter="fetchContacts"
 			type="text"
 			v-model="searchQuery"
 			placeholder="Pesquisar contatos..."
 			class="form-control" />
+
 		<button
 			@click="fetchContacts"
 			class="btn btn-primary"
@@ -22,6 +22,7 @@
 
 <script>
 	import Contact from '../components/Contact.vue';
+
 	import getContacts from '../service/getContacts.js';
 
 	export default {
