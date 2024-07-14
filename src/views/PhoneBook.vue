@@ -2,14 +2,14 @@
 	<div class="div d-flex justify-content-center">
 		<div class="d-flex flex-column align-items-center myContainer">
 			<div class="d-flex mb-2 gap-1 w-100">
-				<forms class="w-100">
+				<form class="w-100">
 					<input
 						@keyup.enter="fetchContacts"
 						type="text"
 						v-model="searchQuery"
 						placeholder="Pesquisar contatos..."
 						class="form-control" />
-				</forms>
+				</form>
 				<button
 					@click="fetchContacts"
 					class="btn btn-primary"
