@@ -16,13 +16,10 @@
 					aria-label="Pesquisar">
 					Pesquisar
 				</button>
-				<ModalAdd></ModalAdd>
+				<ModalAdd @contactCreated="fetchContacts"></ModalAdd>
 			</div>
 
-			<div
-				v-if="(contacts.length == 0)"
-				class="alert alert-warning"
-				role="alert">
+			<div v-if="contacts.length == 0" class="alert alert-warning" role="alert">
 				Nenhum contato encontrado...
 			</div>
 
@@ -84,8 +81,6 @@
 				this.pagination.links = data.links;
 				this.pagination.current_page = data.current_page;
 				this.pagination.total_page = data.last_page;
-
-				console.log(this.pagination.links);
 			},
 			async fetchContacts() {
 				const data = await getContacts(this.searchQuery);
