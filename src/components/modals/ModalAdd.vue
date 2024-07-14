@@ -81,7 +81,7 @@
 </template>
 
 <script>
-import createContact from '../../service/createContact.js'
+	import createContact from '../../service/createContact.js';
 	export default {
 		name: 'ModalAdd',
 		emits: ['contactCreated'],
@@ -106,11 +106,11 @@ import createContact from '../../service/createContact.js'
 					name: this.name,
 					number: this.number,
 				});
-				if(data.error){
-					alert('Não foi possível cadastrar o contato')
-					return
+				if (data.error) {
+					alert('Não foi possível cadastrar o contato');
+					return;
 				}
-				this.$emit('contactCreated')
+				this.$emit('contactCreated');
 				this.clearForms();
 			},
 			validateName() {
@@ -147,8 +147,9 @@ import createContact from '../../service/createContact.js'
 			clearForms() {
 				this.name = '';
 				this.number = '';
-				(this.formOK = false), (this.validations.name.invalid = false);
-				this.validations.number.invalid = false;
+				this.formOK = false;
+				this.validations.name.invalid = null;
+				this.validations.number.invalid = null;
 			},
 		},
 	};

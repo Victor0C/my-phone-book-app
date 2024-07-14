@@ -18,7 +18,7 @@
 			<div class="accordion-body d-flex">
 				<p>Número: {{ this.contact.number }}</p>
 				<div class="d-flex gap-1 ms-auto justify-content-end">
-					<ModalEdit :contact="contact"></ModalEdit>
+					<ModalEdit @contactUpdated="contactUpdated" :contact="this.contact"></ModalEdit>
 					<ModalDelete :contact="contact"></ModalDelete>
 				</div>
 			</div>
@@ -37,6 +37,11 @@
 		components: {
 			ModalEdit,
 			ModalDelete,
+		},
+		methods: {
+			contactUpdated(){
+				this.$emit('contactUpdated')
+			}
 		},
 	};
 </script>

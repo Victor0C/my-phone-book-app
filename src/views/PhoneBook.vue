@@ -19,12 +19,12 @@
 				<ModalAdd @contactCreated="fetchContacts"></ModalAdd>
 			</div>
 
-			<div v-if="contacts.length == 0" class="alert alert-warning" role="alert">
+			<div v-if="contacts.length == 0 && !loading" class="alert alert-warning" role="alert">
 				Nenhum contato encontrado...
 			</div>
 
 			<div class="accordion w-100" id="ContactAccordion">
-				<Contact v-for="contact in contacts" :contact="contact"></Contact>
+				<Contact @contactUpdated="fetchContacts" v-for="contact in contacts" :contact="contact"></Contact>
 			</div>
 
 			<nav
@@ -66,13 +66,14 @@
 		},
 		data() {
 			return {
-				contacts: [{}],
+				contacts: [],
 				searchQuery: '',
 				pagination: {
 					current_page: 1,
 					total_page: 1,
 					links: [],
 				},
+				loading: true
 			};
 		},
 		methods: {
@@ -90,6 +91,7 @@
 					return;
 				}
 				this.fillDatas(data);
+				this.loading = false
 			},
 			async fetchPage(url) {
 				const data = await getPage(url);
