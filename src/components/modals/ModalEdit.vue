@@ -16,7 +16,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<h1 class="modal-title fs-5" id="EditModalLabel">
-						Editar o contato de {{ localName }}
+						Editar o contato de {{ contact.name }}
 					</h1>
 					<button
 						@click="resetForms"
