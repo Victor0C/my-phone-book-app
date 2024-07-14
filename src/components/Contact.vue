@@ -18,8 +18,8 @@
 			<div class="accordion-body d-flex">
 				<p>Número: {{ this.contact.number }}</p>
 				<div class="d-flex gap-1 ms-auto justify-content-end">
-					<ModalEdit @contactUpdated="contactUpdated" :contact="this.contact"></ModalEdit>
-					<ModalDelete :contact="contact"></ModalDelete>
+					<ModalEdit @contactUpdated="refreshList" :contact="contact"></ModalEdit>
+					<ModalDelete @contactDeleted="refreshList" :contact="contact"></ModalDelete>
 				</div>
 			</div>
 		</div>
@@ -31,6 +31,7 @@
 	import ModalDelete from './modals/ModalDelete.vue';
 	export default {
 		name: 'Contact',
+		emits: ['refreshList'],
 		props: {
 			contact: null,
 		},
@@ -39,8 +40,8 @@
 			ModalDelete,
 		},
 		methods: {
-			contactUpdated(){
-				this.$emit('contactUpdated')
+			refreshList(){
+				this.$emit('refreshList')
 			}
 		},
 	};

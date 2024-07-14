@@ -24,7 +24,7 @@
 			</div>
 
 			<div class="accordion w-100" id="ContactAccordion">
-				<Contact @contactUpdated="fetchContacts" v-for="contact in contacts" :contact="contact"></Contact>
+				<Contact @refreshList="fetchContacts" v-for="contact in contacts" :contact="contact"></Contact>
 			</div>
 
 			<nav
