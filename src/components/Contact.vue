@@ -5,10 +5,10 @@
 				class="accordion-button collapsed"
 				type="button"
 				data-bs-toggle="collapse"
-				:data-bs-target="`#${this.contact.id}`"
+				:data-bs-target="`#${contact.id}`"
 				aria-expanded="true"
 				aria-controls="collapseOne">
-				{{ this.contact.name }}
+				{{ contact.name }}
 			</button>
 		</h2>
 		<div
@@ -16,7 +16,7 @@
 			class="accordion-collapse collapse"
 			data-bs-parent="#ContactAccordion">
 			<div class="accordion-body d-flex">
-				<p><span class="fw-semibold">Número: </span>{{ this.contact.number }}</p>
+				<p><span class="fw-semibold">Número: </span>{{ contact.number }}</p>
 				<div class="d-flex gap-1 ms-auto justify-content-end ">
 					<ModalEdit @contactUpdated="refreshList" :contact="contact"></ModalEdit>
 					<ModalDelete @contactDeleted="refreshList" :contact="contact"></ModalDelete>
