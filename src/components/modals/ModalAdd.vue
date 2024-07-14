@@ -3,19 +3,19 @@
 		type="button"
 		class="btn btn-primary"
 		data-bs-toggle="modal"
-		data-bs-target="#EditModal">
+		data-bs-target="#AddModal">
 		Adicionar
 	</button>
 	<div
 		class="modal fade"
-		id="EditModal"
+		id="AddModal"
 		tabindex="-1"
-		aria-labelledby="EditModalLabel"
+		aria-labelledby="AddModalLabel"
 		aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h1 class="modal-title fs-5" id="EditModalLabel">
+					<h1 class="modal-title fs-5" id="AddModalLabel">
 						Adicionar novo contato
 					</h1>
 					<button
