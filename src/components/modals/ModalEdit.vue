@@ -120,7 +120,7 @@
 					number: this.localNumber,
 				});
 				if (data.error) {
-					alert('Não foi possível cadastrar o contato');
+					alert('Não foi possível editar o contato');
 					return;
 				}
 				this.$emit('contactUpdated');
