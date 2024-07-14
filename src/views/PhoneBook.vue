@@ -1,6 +1,6 @@
 <template>
 	<div class="div d-flex justify-content-center">
-		<div class="d-flex flex-column w-50 align-items-center">
+		<div class="d-flex flex-column align-items-center myContainer">
 			<div class="d-flex mb-2 gap-1 w-100">
 				<forms class="w-100">
 					<input
@@ -108,3 +108,15 @@
 		},
 	};
 </script>
+
+<style scoped>
+.myContainer{
+	width: 60rem;
+}
+
+@media screen and (max-width: 750px) {
+  .myContainer {
+    width: 100%;
+  }
+}
+</style>

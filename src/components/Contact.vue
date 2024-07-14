@@ -16,8 +16,8 @@
 			class="accordion-collapse collapse"
 			data-bs-parent="#ContactAccordion">
 			<div class="accordion-body d-flex">
-				<p>Número: {{ this.contact.number }}</p>
-				<div class="d-flex gap-1 ms-auto justify-content-end">
+				<p><span class="fw-semibold">Número: </span>{{ this.contact.number }}</p>
+				<div class="d-flex gap-1 ms-auto justify-content-end ">
 					<ModalEdit @contactUpdated="refreshList" :contact="contact"></ModalEdit>
 					<ModalDelete @contactDeleted="refreshList" :contact="contact"></ModalDelete>
 				</div>

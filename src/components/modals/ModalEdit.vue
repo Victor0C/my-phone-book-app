@@ -1,7 +1,7 @@
 <template>
 	<button
 		type="button"
-		class="btn btn-primary"
+		class="btn btn-primary myButton"
 		data-bs-toggle="modal"
 		:data-bs-target="`#${this.contact.id}editModal`">
 		Editar

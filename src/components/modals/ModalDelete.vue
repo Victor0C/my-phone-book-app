@@ -1,7 +1,7 @@
 <template>
 	<button
 		type="button"
-		class="btn btn-danger"
+		class="btn btn-danger myButton"
 		data-bs-toggle="modal"
 		:data-bs-target="`#${contact.id}DeleteModal`">
 		Deletar
